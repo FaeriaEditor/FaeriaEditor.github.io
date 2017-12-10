@@ -1,0 +1,917 @@
+label.menu-button{
+    height: 35px; 
+    width: 75px; 
+    margin: 0 10px; 
+    display: inline-block; 
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    border: none;
+    position: relative;
+    margin-bottom: 3px;
+    top: 0;
+    left: 0;
+    outline: 0;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 5px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+
+label.lands-button{
+    width: 60px;
+    height: 60px;
+    border: none;
+    display: inline-block;
+    position: relative;
+    margin: 0px 5px;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: 70% 70%, 100% 100%; 
+}
+
+label.well-button{
+    width: 60px;
+    height: 60px;
+    border: none;
+    display: inline-block;
+    position: relative;
+    margin: 0px 5px;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: 70% 60%, 100% 100%; 
+}
+
+label.orb-button{
+    width: 60px;
+    height: 60px;
+    border: none;
+    display: inline-block;
+    position: relative;
+    margin: 0px 5px;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: 82% 72%, 100% 100%; 
+}
+
+.heart-icon{
+    background-size: 100% 100%;
+    background-image:url('res/Icons/card_life_bg.png');
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: bottom;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.power-icon{
+    background-size: 100% 100%;
+    background-image:url('res/Icons/card_power_bg.png');
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    vertical-align: bottom;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.orb-button.player-orb{
+    background-image:url('res/gameUI/orbs/6.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.orb-button.enemy-orb{
+    background-image:url('res/gameUI/orbs/6_enemy.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.well-button.empty-well{
+    background-image:url('res/gameUI/well-icon-empty.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.well-button.active-well{
+    background-image:url('res/gameUI/well-icon-active.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.lands-button.neutral{
+    background-image:url('res/gameUI/neutral.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.lands-button.forest{
+    background-image:url('res/gameUI/forest.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.lands-button.lake{
+    background-image:url('res/gameUI/lake.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.lands-button.mountain{
+    background-image:url('res/gameUI/mountain.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.lands-button.desert{
+    background-image:url('res/gameUI/desert.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.enemy .lands-button.neutral{
+    background-image:url('res/gameUI/neutralb.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.enemy .lands-button.forest{
+    background-image:url('res/gameUI/forestb.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.enemy .lands-button.lake{
+    background-image:url('res/gameUI/lakeb.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.enemy .lands-button.mountain{
+    background-image:url('res/gameUI/mountainb.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.enemy .lands-button.desert{
+    background-image:url('res/gameUI/desertb.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+input[type='radio']:checked + .orb-button.player-orb{
+    background-image:url('res/gameUI/orbs/6.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png');
+}
+
+input[type='radio']:checked + .orb-button.enemy-orb{
+    background-image:url('res/gameUI/orbs/6_enemy.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png');
+}
+
+input[type='radio']:checked + .well-button.empty-well{
+    background-image:url('res/gameUI/well-icon-empty.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png');
+}
+
+input[type='radio']:checked + .well-button.active-well{
+    background-image:url('res/gameUI/well-icon-active.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png');
+}
+
+input[type='radio']:checked + .lands-button.neutral{
+    background-image:url('res/gameUI/neutral.png'),url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+}
+
+input[type='radio']:checked + .lands-button.forest{
+    background-image:url('res/gameUI/forest.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+}
+
+input[type='radio']:checked + .lands-button.lake{
+    background-image:url('res/gameUI/lake.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+}
+
+input[type='radio']:checked + .lands-button.mountain{
+    background-image:url('res/gameUI/mountain.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+}
+
+input[type='radio']:checked + .lands-button.desert{
+    background-image:url('res/gameUI/desert.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+}
+
+.enemy input[type='radio']:checked + .lands-button.neutral{
+    background-image:url('res/gameUI/neutralb.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+}
+
+.enemy input[type='radio']:checked + .lands-button.forest{
+    background-image:url('res/gameUI/forestb.png'),url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+}
+
+.enemy input[type='radio']:checked + .lands-button.lake{
+    background-image:url('res/gameUI/lakeb.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+}
+
+.enemy input[type='radio']:checked + .lands-button.mountain{
+    background-image:url('res/gameUI/mountainb.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+}
+
+.enemy input[type='radio']:checked + .lands-button.desert{
+    background-image:url('res/gameUI/desertb.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+}
+
+label.lands-button:hover{
+    top: 1px;
+}
+
+input[type='radio']:checked + label.lands-button{
+    top: 3px;
+}
+
+label.menu-button:hover{
+  /* background: #99ba01; */
+  /* color: #687e00; */
+}
+
+input[type='radio']:checked + label.menu-button,
+label.menu-button:active {
+  top: 3px;
+  left: 2px;
+}
+
+.menu-icon{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-size: 100% 100%;
+    background-image:url('res/editorUI/menu.png');
+    top: 0;
+    z-index: 3;
+    left: 0;
+}
+
+.download-icon{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: 100% 100%;
+    background-image:url('res/gameUI/download.png');
+    top: 20px;
+    z-index: 3;
+    right: 20px;
+    display:none;
+}
+
+.menu-icon-back{
+    width: 15px;
+    height: 15px;
+    top: 2.5% !important;
+    left: 354px !important;
+    background-image:url('res/Icons/cross.png');
+    position: absolute;
+    z-index: 3;
+}
+
+.menu-container{
+    height:100%; 
+    width: 390px; 
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image:url('res/Panels/Stone/StonePanel_A.png');
+    background-size: 100% 100%;
+    z-index: 2;
+}
+
+.token-container{
+    overflow-y: auto;
+    margin-right: 16px;
+    height: calc(100% - 320px);
+    margin-bottom: 25px;
+}
+
+.creatures-finder{
+    margin: 15px 0;
+    width: 50%;
+}
+
+.stone-input{
+    background-image: url(res/Panels/Stone/StoneInput.png);
+    background-size: 100% 100%;
+    height: 30px;
+    padding-left: 2%;
+    padding-right: 2%;
+    border: 3px black;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.menu{
+    height: 50px; 
+    text-align: center; 
+    display: table;
+    width: 100%;
+    margin-left: 14px;
+}
+
+.menu-top-buttons{
+    height: 50px; 
+    text-align: center; 
+    display: table;
+    width: 100%;
+}
+
+.hide{
+    display: none;
+}
+
+label.creature-button.white-edit-lightbox{
+    background-image: url('res/editorUI/token_white_farmboy.png'), url('res/Panels/Stone/StoneBox_Button.png') ;
+    background-position: 2px -4px, 0 0;
+    background-size: 90% 100%, 100% 100%;
+}
+
+label.creature-button.black-edit-lightbox{
+    background-position: 2px -4px, 0 0;
+    background-size: 90% 100%, 100% 100%;
+    background-image: url('res/editorUI/token_black_deathwishghoul.png'), url('res/Panels/Stone/StoneBox_Button.png') ;
+}
+
+.creature-button.big{
+    width: 65px;
+    height: 65px;
+    background-size: 100% 100%;
+    margin-left: 40px;
+}
+
+label.creature-button{
+    background-image: url('res/pics/001.png'), url('res/Panels/Stone/StoneBox_Button.png') ;
+}
+
+.ui-helper-hidden-accessible{
+    display: none;
+}
+
+.creature-button{
+    height: 60px;
+	width: 60px;
+	margin: 0 10px; 
+    display: inline-block; 
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: 70% 70%, 100% 100%; 
+	border: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
+
+.gear-button{
+    height: 60px;
+	width: 60px;
+	margin: 0 10px; 
+    display: inline-block; 
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: 70% 70%, 100% 100%; 
+	border: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-image: url('res/gameUI/gear.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+.player-cards-button{
+    height: 60px;
+	width: 60px;
+	margin: 0 10px; 
+    display: inline-block; 
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: 70% 70%, 100% 100%; 
+	border: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-image: url('res/gameUI/playerCards.png'), url('res/Panels/Stone/StoneBox_Button.png');
+}
+
+#redactMain{
+    margin-top: 25px;
+}
+
+.player-cards-button:hover,
+.gear-button:hover,
+.creature-button:hover{
+    top: 1px;
+}
+
+
+input[type='radio']:checked + img.creature-button.big,
+input[type='radio']:checked + label.creature-button.big{
+    top: 3px;
+    opacity: 0.3;
+}
+
+input[type='radio']:checked + label.gear-button{
+    top: 3px;
+    background-image: url('res/gameUI/gear.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png');
+}
+
+input[type='radio']:checked + label.player-cards-button{
+    top: 3px;
+    background-image: url('res/gameUI/playerCards.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png');
+}
+
+
+input[type='radio']:checked + label.creature-button.white-edit-lightbox{
+    background-image: url('res/editorUI/token_white_farmboy.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+    top: 3px;
+}
+
+input[type='radio']:checked + label.creature-button.black-edit-lightbox{
+    background-image: url('res/editorUI/token_black_deathwishghoul.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+    top: 3px;
+}
+
+input[type='radio']:checked + label.creature-button{
+    background-image: url('res/pics/001.png'), url('res/Panels/Stone/StoneBox_Button_Pressed.png') ;
+    top: 3px;
+}
+
+.number-input-container input{
+    width: 40px;
+    outline: 0;
+    border: 0;
+}
+
+.text-container label{
+    color: #999999;
+}
+.text-input-container,
+.number-input-container{
+    padding: 1px;
+}
+
+.text-container{
+    background-image: url(res/Panels/Stone/StoneInput.png);
+    background-size: 100% 100%;
+    padding: 30px 0 30px 20px;
+    margin-left: 20px;
+}
+
+.text-container.backgrounds{
+    padding: 30px 20px 30px 20px;
+    text-align: center;
+}
+
+.number-input-container input.not-valid{
+    border: 3px solid red;
+}
+
+.ui-autocomplete{
+    display: none !important;
+}
+
+canvas{
+    position: absolute;
+    z-index: 1;
+}
+
+#canvasBack{
+    position:absolute;
+    z-index: -100;
+}
+
+body{
+    overflow: scroll;
+}
+
+.context-menu{
+    position: absolute;
+    display: none;
+    z-index: 2;
+}
+
+.context-menu div{
+    color: #1CD3A2;
+    background-image: url('res/Panels/Crystal/CrystalButton_LongThin.png');
+    background-size: 100% 100%;
+    text-align: center;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.context-menu div:hover{
+    background-color: #1CD3A2;
+    background-image: url('res/Panels/Crystal/CrystalButton_LongThin_Pressed.png');
+}
+
+.change-background-icon{
+    width: 60px;
+    height: 60px;
+    background-size: 100% 100%;
+    margin-bottom: 20px;
+    display: inline-block;
+    background-image:url('res/editorUI/menu-back.png');
+}
+
+.change-background-icon.right{
+    right: 0;
+    transform: scaleX(-1);
+    z-index: 2;
+}
+
+.change-background-icon.left{
+    left: 0;
+    z-index: 2;
+}
+
+#background{
+    background-image: url('res/Board/1.jpg');
+    /* , url('res/Board/2.png'); */
+    background-size: 124% 124%;
+    box-sizing: border-box;
+    margin-top: -13%;
+    margin-left: -24%;
+    /* , 100% 100%; */
+    /* background-clip: border-box; */
+    transition: background-image 5s, opacity 5s;
+    background-repeat: no-repeat;
+    width: 124%;
+    height: 124%;
+    position: absolute;
+    z-index: -100;
+}
+
+.background-frame{
+    position: absolute;
+    width: 100%;
+    z-index: -98;
+    background-color: black;
+}
+
+.background-frame-vertical{
+    position: absolute;
+    height: 100%;
+    z-index: -98;
+    background-color: black;
+}
+
+.edit-creature-lightbox{
+    position: absolute;
+    display: none;
+    z-index: 999;
+    background-size: 100% 100%;
+    padding: 20px;
+    text-align: center;
+    background-image:url('res/Panels/Stone/StonePanel_A.png');
+}
+
+.edit-orb-lightbox{
+    position: absolute;
+    display: none;
+    z-index: 999;
+    background-size: 100% 100%;
+    padding: 20px;
+    text-align: center;
+    background-image:url('res/Panels/Stone/StonePanel_A.png');
+}
+
+.lightbox-background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: none;
+    opacity: 0.75;
+    z-index: 998;
+}
+
+.edit-creature-input{
+    vertical-align: middle;
+}
+
+.creature-edit-picture{
+    
+    position: relative;
+    text-align: left;
+}
+
+.span-creature{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background-size: 300% 300%;
+    background-position: -150px -140px;
+    border-radius: 250px;
+    position: absolute;
+    top: -170px;
+    left: 20px;
+    z-index: -1;
+}
+
+.edit-pic-hp.long{
+    margin-right: 35px;
+}
+
+.edit-pic-power.long{
+    margin-left: 21px;
+}
+
+.edit-pic-hp.buffed,
+.edit-pic-power.buffed{
+    color: green;
+}
+
+.edit-pic-hp.debuffed,
+.edit-pic-power.debuffed{
+    color: red;
+}
+
+.edit-pic-power{
+    display: inline;
+    position: absolute;
+    vertical-align: bottom;
+    bottom: 0;
+    width: 20px;
+    margin-bottom: 45px;
+    margin-left: 29px;
+    height: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-shadow: black 0 0 4px;
+}
+
+.edit-pic-hp{
+    display: inline;
+    position: absolute;
+    vertical-align: bottom;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    margin-bottom: 50px;
+    margin-right: 26px;
+    height: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-shadow: black 0 0 4px;
+}
+
+.edit-pic-jump, .edit-pic-charge, .edit-pic-aquatic, .edit-pic-flying, .edit-pic-taunt, .edit-pic-ranged{
+    background-size: 100% 100%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.edit-pic-taunt{
+    top: -205px;
+    left: 75px;
+    background-image: url(res/Tokens/Abilities/taunt.png);
+}
+
+.edit-pic-flying.left{
+    left: -25px;
+    background-image: url(res/Tokens/Abilities/flying.png);
+    top: -220px;
+    vertical-align: bottom;
+    height: 150px;
+    width: 60px;
+}
+
+.edit-pic-flying.right{
+    left: 160px;
+    background-image: url(res/Tokens/Abilities/flying.png);
+    top: -220px;
+    vertical-align: bottom;
+    height: 150px;
+    width: 60px;
+    transform: rotateY(180deg);
+}
+
+.edit-pic-charge{
+    left: 75px;
+    background-image: url(res/Tokens/Abilities/charge.png);
+    top: -35px;
+    vertical-align: bottom;
+}
+
+.edit-pic-jump{
+    left: 75px;
+    background-image: url(res/Tokens/Abilities/jump.png);
+    top: -35px;
+    vertical-align: bottom;
+}
+
+.edit-pic-ranged{
+    left: 138px;
+    background-image: url(res/Tokens/Abilities/ranged.png);
+    top: -105px;
+    vertical-align: bottom;
+}
+
+.pic-jump, .pic-charge, .pic-aquatic, .pic-flying, .pic-taunt, .pic-ranged{
+    background-size: 100% 100%;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+}
+
+.pic-jump:hover, .pic-charge:hover, .pic-aquatic:hover, .pic-flying:hover, .pic-taunt:hover, .pic-ranged:hover{
+    top: 1px;
+}
+
+.pic-jump.pressed, .pic-charge.pressed, .pic-aquatic.pressed, .pic-flying.pressed, .pic-taunt.pressed, .pic-ranged.pressed{
+    top: 3px;
+    opacity: 0.3;
+}
+
+.pic-jump{
+    background-image:url('res/Tokens/Abilities/jump.png');
+}
+.pic-charge{
+    background-image:url('res/Tokens/Abilities/charge.png');
+}
+.pic-aquatic{
+    background-image:url('res/Tokens/Abilities/aquatic.png');
+}
+.pic-flying{
+    background-image:url('res/Tokens/Abilities/flying.png');
+}
+.pic-taunt{
+    background-image:url('res/Tokens/Abilities/taunt.png');
+}
+.pic-ranged{
+    background-image:url('res/Tokens/Abilities/ranged.png');
+}
+
+.ok-button-lightbox{
+    background-image: url(res/Panels/Stone/StoneButton_Gold.png);
+    background-size: 100% 100%;
+    width: 107px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 10px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 5px;
+    position: relative;
+    color: white;
+    cursor: default;
+}
+
+.ok-button-lightbox:hover, .cancel-button-lightbox:hover{
+    top: 1px;
+}
+
+.cancel-button-lightbox{
+    background-image: url(res/Panels/Stone/StoneButton_Gold.png);
+    background-size: 100% 100%;
+    width: 107px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 10px;
+    margin-top: 20px;
+    float: right;
+    margin-right: 5px;
+    position: relative;
+    color: white;
+    cursor: default;
+}
+
+.edit-orb-picture{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-size: 100% 100%, 75% 75%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 0, 25px 10px;
+    
+    position: relative;
+    text-align: left;
+}
+
+.change-orb-icon{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-size: 100% 100%;
+    background-image:url('res/editorUI/menu-back.png');
+}
+    
+.change-orb-icon.right{
+    transform: rotateY(180deg);
+}
+
+.change-orb-icon.orb{
+    margin-bottom: 10px;
+}
+
+.change-orb-icon.avatar{
+    position: absolute;
+    top: 100px;
+}
+
+.edit-pic-orb-hp{
+    display: inline;
+    position: absolute;
+    vertical-align: bottom;
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    margin-bottom: 25px;
+    margin-right: 10px;
+    height: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-shadow: black 0 0 4px;
+    background-size: 100% 100%;
+    background-image: url('res/gameUI/life.png');
+}
+
+.card-tooltip{
+    width: 300px;
+    height: 300px;
+    z-index: 100;
+    position: absolute;
+    background-size: 100% 100%;
+    display: none;
+}
+
+.count{
+    padding-left: 2px;
+}
+
+.creature-counter{
+    padding: 0px 4px;
+    float: right;
+}
+
+.creature-in-list{
+    margin: 0px 20px;
+    display: inline;
+    width: calc(100% - 40px);
+    height: 30px;
+    vertical-align: middle;
+    color: lightgrey;
+}
+
+.creature-in-list-container{
+    padding: 7px 0;
+    margin: 5px 0 5px 13px;
+    background-size: 100% 100%; 
+}
+
+.creature-in-list-container.structure{
+    background-image: url('res/Panels/Crystal/CrystalCraftButton_LongThin.png');
+}
+
+.creature-in-list-container.creature{
+    background-image: url('res/Panels/Crystal/CrystalButton_LongThin.png');
+}
+
+.creature-in-list-container.event{
+    background-image: url('res/Panels/Crystal/CrystalButton_SepLongThin.png');
+}
+
+.creature-in-list-container.structure.selected-creature{
+    background-image: url('res/Panels/Crystal/CrystalCraftButton_LongThin_Pressed.png');
+}
+
+.creature-in-list-container.creature.selected-creature{
+    background-image: url('res/Panels/Crystal/CrystalButton_LongThin_Pressed.png');
+}
+
+.creature-in-list-pic{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 100% 100%;
+}
+
+.faeria .creature-in-list-pic{
+    background-image: url('res/Icons/card_faeriacount.png');
+}
+
+.mountain .creature-in-list-pic{
+    background-image: url('res/Icons/icon_land_red.png');
+}
+
+.lake .creature-in-list-pic{
+    background-image: url('res/Icons/icon_land_blue.png');
+}
+
+.desert .creature-in-list-pic{
+    background-image: url('res/Icons/icon_land_yellow.png');
+}
+
+.forest .creature-in-list-pic{
+    background-image: url('res/Icons/icon_land_green.png');
+}
+
+.neutral .creature-in-list-pic{
+    background-image: url('res/Icons/icon_land_human.png');
+}
+
+.plus-sign{
+    background-image: url(res/gameUI/playerCards.png);
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.invalid-input{
+    border: 2px solid red;
+}
+    

@@ -1,0 +1,4 @@
+todo:
+
+1) re-draw icons for menu
+2) https://stackoverflow.com/questions/4243042/c-sharp-point-in-polygon

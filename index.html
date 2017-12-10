@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="jquery.min.js"></script>
+        
+        <script src="jquery-ui.min.js"></script>
+        <script src="imagesLoader.js"></script>
+        <script src="merlinParser.js"></script>
+        <script src="drawCards.js"></script>
+        <script src="field.js"></script>
+        <script src="menu.js"></script>
+        <script src="editCreatureLightbox.js"></script>
+        <script src="editOrbLightbox.js"></script>
+    </head>
+    <body style="height:100%; margin: 0; overflow: hidden;">
+        <div class="menu-icon"></div>
+        <div class="download-icon"></div>
+        <canvas id="canvas"></canvas>
+        <canvas id="canvasBack"></canvas>
+            <div class="background-frame"></div>
+            <div class="background-frame"></div>
+            <div class="background-frame-vertical"></div>
+            <div class="background-frame-vertical"></div>
+            
+        <div class="menu-container">
+            <div id="redactMain" class="menu-top-buttons">
+                <div style="display: table-cell; vertical-align: middle;">
+                    <input id="btnCreatures" type="radio" class="hide" name="mainRedact" ></input>
+                    <label for="btnCreatures" class="creature-button"></label>
+                    <input id="btnLands" type="radio" class="hide" name="mainRedact"></input>
+                    <label for="btnLands" class="lands-button neutral"></label>
+                    <input id="btnText" type="radio" class="hide" name="mainRedact"></input>
+                    <label for="btnText" class="gear-button"></label>
+                </div>
+            </div>
+            <div id="redactCreatures" class="menu">
+            <div style="color:#999999; padding-top: 10px;">Start typing creature(structure) name:</div>
+                <input type="text" class="creatures-finder stone-input" id="creatureLookup">
+                
+            <div id="divOwnerContainerMainMenu" style="padding-bottom:10px; color: #999999">
+               <div style="padding-bottom:10px;">Choose a creature(structure) owner:</div>
+               <input id="btnPlayerCreatureMainMenu" checked type="radio" data-owner="player" class="hide" name="creatureOwnerMainMenu" ></input>
+               <label title="player" for="btnPlayerCreatureMainMenu" class="creature-button white-edit-lightbox"></label>
+
+               <input id="btnEnemyCreatureMainMenu" type="radio" data-owner="enemy" class="hide" name="creatureOwnerMainMenu" ></input>
+               <label title="enemy" for="btnEnemyCreatureMainMenu" class="creature-button black-edit-lightbox"></label>
+                <div>
+                <span>player</span>
+                <span style="margin-left: 40px">enemy</span>
+                </div>
+            </div>
+            </div>
+            
+            
+            <div id="redactLands" style="margin-top: 20px" class="menu">
+                <div class="player">
+                    <div style="display: table-cell; vertical-align: middle">
+                        <input id="btnPNeutral" data-landtype="neutral" data-owner="player" type="radio" class="hide" name="landsCreaturesRedact" ></input>
+                        <label for="btnPNeutral" class="lands-button neutral"></label>
+                        <input id="btnPForest" data-landtype="forest" data-owner="player" type="radio" class="hide" name="landsCreaturesRedact"></input>
+                        <label for="btnPForest" class="lands-button forest"></label>
+                        <input id="btnPLake" data-landtype="lake" data-owner="player" type="radio" class="hide" name="landsCreaturesRedact"></input>
+                        <label for="btnPLake" class="lands-button lake"></label>
+                        <input id="btnPMountain" data-landtype="mountain" data-owner="player" type="radio" class="hide" name="landsCreaturesRedact"></input>
+                        <label for="btnPMountain" class="lands-button mountain"></label>
+                        <input id="btnPDesert" data-landtype="desert" data-owner="player" type="radio" class="hide" name="landsCreaturesRedact"></input>
+                        <label for="btnPDesert" class="lands-button desert"></label>
+                    </div>
+                </div>
+                <div class="enemy">
+                    <div style="display: table-cell; vertical-align: middle">
+                        <input id="btnENeutral" data-landtype="neutral" data-owner="enemy" type="radio" class="hide" name="landsCreaturesRedact" ></input>
+                        <label for="btnENeutral" class="lands-button neutral"></label>
+                        <input id="btnEForest" data-landtype="forest" data-owner="enemy" type="radio" class="hide" name="landsCreaturesRedact"></input>
+                        <label for="btnEForest" class="lands-button forest"></label>
+                        <input id="btnELake" data-landtype="lake" data-owner="enemy" type="radio" class="hide" name="landsCreaturesRedact"></input>
+                        <label for="btnELake" class="lands-button lake"></label>
+                        <input id="btnEMountain" data-landtype="mountain" data-owner="enemy" type="radio" class="hide" name="landsCreaturesRedact"></input>
+                        <label for="btnEMountain" class="lands-button mountain"></label>
+                        <input id="btnEDesert" data-landtype="desert" data-owner="enemy" type="radio" class="hide" name="landsCreaturesRedact"></input>
+                        <label for="btnEDesert" class="lands-button desert"></label>
+                    </div>
+                </div>
+                <div class="common">
+                    <div style="display: table-cell; vertical-align: middle; margin-top: 20px; display: block">
+                        <input id="btnActiveWell" data-welltype="emptyWell" data-owner="nobody" type="radio" class="hide" name="landsCreaturesRedact"></input>
+                        <label for="btnActiveWell" class="well-button empty-well"></label>
+                        <input id="btnEmptyWell" data-welltype="activeWell" data-owner="nobody" type="radio" class="hide" name="landsCreaturesRedact"></input>
+                        <label for="btnEmptyWell" class="well-button active-well"></label>
+                    </div>
+                    
+                    <div style="display: table-cell; vertical-align: middle; margin-top: 20px; display: block">
+                        <input id="btnPlayerOrb" data-orb="orb" data-owner="player" type="radio" class="hide" name="landsCreaturesRedact"></input>
+                        <label for="btnPlayerOrb" class="orb-button player-orb"></label>
+                        <input id="btnEnemyOrb" data-orb="orb" data-owner="enemy" type="radio" class="hide" name="landsCreaturesRedact"></input>
+                        <label for="btnEnemyOrb" class="orb-button enemy-orb"></label>
+                    </div>
+                </div>
+            </div>
+            <div id="redactText" style="margin-top: 20px; margin-right: 20px; overflow-y: auto; height:calc(100% - 123px); ">
+            
+                <div class="text-container">
+                    <div class="number-input-container">
+                        <label>There are</label>
+                        <input type="number" class="stone-input" id="numRemainingCards" min="0" max="30" value="30"></input>
+                        <label>cards in player's deck</label>
+                    </div>
+                    <div class="number-input-container">
+                        <label>There are</label>
+                        <input type="number" class="stone-input" id="numFaeriaCount" min="0" max="99" value="3"></input>
+                        <label>faeria in player's pool</label>
+                    </div>
+                    <div class="text-input-container">
+                        <label>Player's name: </label>
+                        <input type="text" class="stone-input" id="txtPlayerName"></input>
+                    </div>
+                </div>
+                
+                <div class="text-container">
+                    <div class="number-input-container">
+                        <label>There are</label>
+                        <input type="number" class="stone-input" id="numRemainingCardsO" min="0" max="30" value="30"></input>
+                        <label>cards in enemy's deck</label>
+                    </div>
+                    <div class="number-input-container">
+                        <label>There are</label>
+                        <input type="number" class="stone-input" id="numFaeriaCountO" min="0" max="99" value="3"></input>
+                        <label>faeria in opponent's pool</label>
+                    </div>
+                    <div class="text-input-container">
+                        <label>Opponent's name: </label>
+                        <input type="text" class="stone-input" id="txtOpponentName"></input>
+                    </div>
+                     <div class="text-input-container">
+                        <label>Cards in opponent's hand: </label>
+                        <input type="number" class="stone-input" id="numDeckSizeO" min="0" max="9" value="5"></input>
+                    </div>
+                </div>
+                
+                <div class="text-container backgrounds">
+                    <div style="margin-bottom: 5px"><label>Choose background:</label></div>
+                    <div>
+                        <div data-direction="left" class="change-background-icon left"></div>
+                        <span id="backgroundPreview" style="border: 1px solid #999999; height: 100px; width: 150px; display: inline-block; background-size: 100% 100%;"></span>
+                        <div data-direction="right" class="change-background-icon right"></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="tokenContainer" class="token-container">
+            
+            </div>
+        </div>
+        
+        <div id="contextMenu" class="context-menu">
+            <div id="btnRemoveAll">Remove land & creature</div>
+            <div id="btnRemoveCreature">Remove creature</div>
+            <div id="btnRemoveLand">Remove land</div>
+            <div id="btnEditCreature">Edit creature</div>
+            <div id="btnRemoveWell">Remove well</div>
+            <div id="btnRemoveOrb">Remove Orb</div>
+            <div id="btnEditOrb">Edit Orb</div>
+        </div>
+        
+        <div class="lightbox-background"></div>
+        <div id="editCreatureLightbox" class="edit-creature-lightbox">
+            <span id="picCreatureEdit" class="creature-edit-picture">
+                <span class="edit-pic-power"></span>
+                <span class="edit-pic-hp"></span>
+                <div id="spanFrame" style="width: 200px; height: 200px; background-size: 100% 100%; display: inline-block"></div>
+                
+                <div id="spanCreature" class="span-creature"></div>
+                <span data-ability="taunt" class="edit-pic-taunt hide"></span>
+                <span data-ability="jump" class="edit-pic-jump hide"></span>
+                <span data-ability="flying" class="edit-pic-flying left hide"></span>
+                <span data-ability="flying" class="edit-pic-flying right hide"></span>
+                <span data-ability="charge" class="edit-pic-charge hide"></span>
+                <span data-ability="ranged" class="edit-pic-ranged hide"></span>
+            </span>
+            <div id="divAbilitiesContainer">
+                <span data-ability="taunt" class="pic-taunt"></span>
+                <span data-ability="charge" class="pic-charge"></span>
+                <span data-ability="flying" class="pic-flying"></span>
+                <span data-ability="ranged" class="pic-ranged"></span>
+                <span data-ability="jump" class="pic-jump"></span>
+            </div>
+            <div style="width: 250px">
+                <span class="power-icon"></span><input style="margin-right: 20px" class="stone-input edit-creature-input" type="number" id="numPowerEdit" min="0" max="99"></input>
+                <span class="heart-icon"></span><input class="stone-input edit-creature-input" type="number" id="numHpEdit" min="1" max="99"></input>
+            </div>
+            
+            <div id="divOwnerContainer" style="width: 250px; padding-top:10px; color: white">
+               <div style="padding-bottom:10px;">Please choose an owner</div>
+               <input id="btnPlayerCreature" type="radio" data-owner="player" class="hide" name="creatureOwner" ></input>
+               <label title="player" for="btnPlayerCreature" class="creature-button white-edit-lightbox"></label>
+
+               <input id="btnEnemyCreature" type="radio" data-owner="enemy" class="hide" name="creatureOwner" ></input>
+               <label title="enemy" for="btnEnemyCreature" class="creature-button black-edit-lightbox"></label>
+                <div>
+                <span>player</span>
+                <span style="margin-left: 40px">enemy</span>
+                </div>
+            </div>
+            
+            <div id="lightboxFooter">
+                <span class="ok-button-lightbox">
+                    Ok
+                </span>
+                <span class="cancel-button-lightbox">
+                    Cancel
+                </span>
+            </div>
+        </div>
+        
+        
+        <div id="editOrbLightbox" class="edit-orb-lightbox">
+        <div>
+            <span class="change-orb-icon avatar" title="previous avatar"></span>
+            <span class="change-orb-icon orb" title="previous orb"></span>
+            <span id="picOrbEdit" class="edit-orb-picture">
+                <span class="edit-pic-orb-hp"></span>
+            </span>
+            <span class="change-orb-icon avatar right" title="next avatar"></span>
+            <span class="change-orb-icon orb right" title="next orb"></span>
+        </div>
+            <span class="heart-icon"></span><input class="stone-input edit-creature-input" type="number" id="numHpEdit" min="1" max="99"></input>
+            <div id="lightboxFooter">
+                <span class="ok-button-lightbox">
+                    Ok
+                </span>
+                <span class="cancel-button-lightbox">
+                    Cancel
+                </span>
+            </div>
+        </div>
+        
+        <img class="card-tooltip">
+        </img>
+        
+        <!-- <image style="transform: rotate(-30deg)" height="250px" src = "https://raw.githubusercontent.com/abrakam/Faeria_Cards/master/CardExport/English/001.png"></image> -->
+    </body>
+</html>
